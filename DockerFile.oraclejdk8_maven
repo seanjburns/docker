@@ -1,0 +1,8 @@
+FROM oraclejdk8
+
+MAINTAINER Sean Burns <seanjburns@gmail.com>
+
+RUN yum install -y tar
+
+RUN cd /tmp; wget http://apache.saix.net/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
+RUN cd /opt; tar -xzf /tmp/apache-maven-3.2.5-bin.tar.gz; mv apache-maven-3.2.5 maven; ln -s /opt/maven/bin/mvn /usr/local/bin; rm -rf /tmp/*	
