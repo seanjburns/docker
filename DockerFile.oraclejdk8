@@ -2,8 +2,6 @@ FROM centos:7
 
 MAINTAINER Sean Burns <seanjburns@gmail.com>
 
-RUN yum -y update && yum clean all
-
 RUN yum install -y wget unzip tar && yum clean all
 
 RUN wget --continue --no-check-certificate --header "Cookie: oraclelicense=a" -O jdk-linux-x64.rpm "http://download.oracle.com/otn-pub/java/jdk/8u31-b13/jdk-8u31-linux-x64.rpm"
