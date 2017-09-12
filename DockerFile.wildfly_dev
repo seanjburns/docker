@@ -1,0 +1,9 @@
+FROM seanjburns/wildfly
+
+MAINTAINER Sean Burns <seanjburns@gmail.com>
+
+USER root
+RUN yum install -y tar
+RUN cd /tmp; wget http://apache.saix.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+RUN cd /opt; tar -xzf /tmp/apache-maven-3.5.0-bin.tar.gz; mv apache-maven-3.5.0 maven; ln -s /opt/maven/bin/mvn /usr/local/bin; rm -rf /tmp/*
+USER wildfly

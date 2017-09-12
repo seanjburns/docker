@@ -3,7 +3,7 @@ FROM oraclejdk8
 MAINTAINER Sean Burns <seanjburns@gmail.com>
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 8.2.0.Final
+ENV WILDFLY_VERSION 10.1.0.Final
 
 RUN groupadd -r wildfly -g 1000 && useradd -u 1000 -r -g wildfly -m -d /opt/wildfly -s /sbin/nologin -c "WildFly user" wildfly
 
